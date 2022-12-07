@@ -9,7 +9,8 @@ export default async function handler(req, res) {
     await NextCors(req, res, {
       // Options
       methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-      origin: "*",
+      // origin: "*",
+      origin: ["http://127.0.0.1", "http://localhost:5502", "http://127.0.0.1:5502", "http://localhost"],
       optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     });
     res.status(200).json({ name: "POST John Doe" });
@@ -18,7 +19,7 @@ export default async function handler(req, res) {
   if (method == "GET") {
     await NextCors(req, res, {
       // Options
-      methods: "*",
+      methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
       origin: ["http://127.0.0.1", "http://localhost:5502", "http://127.0.0.1:5502", "http://localhost"],
       optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     });
