@@ -18,8 +18,8 @@ export default async function handler(req, res) {
   if (method == "GET") {
     await NextCors(req, res, {
       // Options
-      methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-      origin: "*",
+      methods: "*",
+      origin: ["http://127.0.0.1", "http://localhost:5502", "http://127.0.0.1:5502", "http://localhost"],
       optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     });
 
