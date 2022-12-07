@@ -11,6 +11,11 @@ export default async function handler(req, res) {
       methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
       // origin: "*",
       origin: ["http://127.0.0.1", "http://localhost:5502", "http://127.0.0.1:5502", "http://localhost"],
+      headers: "*",
+      //   res.header("Access-Control-Allow-Origin", "*");
+      // res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+      // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,
+      // Accept, x-client-key, x-client-token, x-client-secret, Authorization");
       optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     });
     res.status(200).json({ name: "POST John Doe" });
